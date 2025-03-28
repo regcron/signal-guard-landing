@@ -1,4 +1,4 @@
-
+import React from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,6 @@ import { Check, HelpCircle } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
@@ -149,41 +148,39 @@ export default function Pricing() {
                   </CardHeader>
                   
                   <CardContent className="flex-grow">
-                    <TooltipProvider>
-                      <ul className="space-y-3">
-                        {plan.features.map((feature, i) => (
-                          <li key={i} className="flex items-start">
-                            <Check className="h-5 w-5 text-primary shrink-0 mr-2 mt-0.5" />
-                            <span className="text-sm">{feature.text}</span>
-                            {feature.tooltip && (
-                              <Tooltip>
-                                <TooltipTrigger asChild>
-                                  <Button variant="ghost" size="icon" className="h-5 w-5 ml-1 p-0">
-                                    <HelpCircle className="h-3 w-3 text-muted-foreground" />
-                                  </Button>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                  <p className="max-w-xs">{feature.tooltip}</p>
-                                </TooltipContent>
-                              </Tooltip>
-                            )}
+                    <ul className="space-y-3">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-start">
+                          <Check className="h-5 w-5 text-primary shrink-0 mr-2 mt-0.5" />
+                          <span className="text-sm">{feature.text}</span>
+                          {feature.tooltip && (
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button variant="ghost" size="icon" className="h-5 w-5 ml-1 p-0">
+                                  <HelpCircle className="h-3 w-3 text-muted-foreground" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <div className="max-w-xs">{feature.tooltip}</div>
+                              </TooltipContent>
+                            </Tooltip>
+                          )}
+                        </li>
+                      ))}
+                      
+                      {plan.limitations && (
+                        <>
+                          <li className="pt-3 border-t border-border/50">
+                            <span className="text-sm text-muted-foreground">Limitations:</span>
                           </li>
-                        ))}
-                        
-                        {plan.limitations && (
-                          <>
-                            <li className="pt-3 border-t border-border/50">
-                              <span className="text-sm text-muted-foreground">Limitations:</span>
+                          {plan.limitations.map((limitation, i) => (
+                            <li key={i} className="flex items-start text-muted-foreground">
+                              <span className="text-sm">{limitation}</span>
                             </li>
-                            {plan.limitations.map((limitation, i) => (
-                              <li key={i} className="flex items-start text-muted-foreground">
-                                <span className="text-sm">{limitation}</span>
-                              </li>
-                            ))}
-                          </>
-                        )}
-                      </ul>
-                    </TooltipProvider>
+                          ))}
+                        </>
+                      )}
+                    </ul>
                   </CardContent>
                   
                   <CardFooter>
@@ -205,7 +202,6 @@ export default function Pricing() {
           <TabsContent value="annual" className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {pricingPlans.map((plan, index) => {
-                // Skip the free plan price adjustment for annual billing
                 const annualPrice = plan.name === "Free" 
                   ? "$0" 
                   : `$${Math.floor(parseInt(plan.price.replace('$', '')) * 0.8 * 12)}`;
@@ -238,41 +234,39 @@ export default function Pricing() {
                     </CardHeader>
                     
                     <CardContent className="flex-grow">
-                      <TooltipProvider>
-                        <ul className="space-y-3">
-                          {plan.features.map((feature, i) => (
-                            <li key={i} className="flex items-start">
-                              <Check className="h-5 w-5 text-primary shrink-0 mr-2 mt-0.5" />
-                              <span className="text-sm">{feature.text}</span>
-                              {feature.tooltip && (
-                                <Tooltip>
-                                  <TooltipTrigger asChild>
-                                    <Button variant="ghost" size="icon" className="h-5 w-5 ml-1 p-0">
-                                      <HelpCircle className="h-3 w-3 text-muted-foreground" />
-                                    </Button>
-                                  </TooltipTrigger>
-                                  <TooltipContent>
-                                    <p className="max-w-xs">{feature.tooltip}</p>
-                                  </TooltipContent>
-                                </Tooltip>
-                              )}
+                      <ul className="space-y-3">
+                        {plan.features.map((feature, i) => (
+                          <li key={i} className="flex items-start">
+                            <Check className="h-5 w-5 text-primary shrink-0 mr-2 mt-0.5" />
+                            <span className="text-sm">{feature.text}</span>
+                            {feature.tooltip && (
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <Button variant="ghost" size="icon" className="h-5 w-5 ml-1 p-0">
+                                    <HelpCircle className="h-3 w-3 text-muted-foreground" />
+                                  </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <div className="max-w-xs">{feature.tooltip}</div>
+                                </TooltipContent>
+                              </Tooltip>
+                            )}
+                          </li>
+                        ))}
+                        
+                        {plan.limitations && (
+                          <>
+                            <li className="pt-3 border-t border-border/50">
+                              <span className="text-sm text-muted-foreground">Limitations:</span>
                             </li>
-                          ))}
-                          
-                          {plan.limitations && (
-                            <>
-                              <li className="pt-3 border-t border-border/50">
-                                <span className="text-sm text-muted-foreground">Limitations:</span>
+                            {plan.limitations.map((limitation, i) => (
+                              <li key={i} className="flex items-start text-muted-foreground">
+                                <span className="text-sm">{limitation}</span>
                               </li>
-                              {plan.limitations.map((limitation, i) => (
-                                <li key={i} className="flex items-start text-muted-foreground">
-                                  <span className="text-sm">{limitation}</span>
-                                </li>
-                              ))}
-                            </>
-                          )}
-                        </ul>
-                      </TooltipProvider>
+                            ))}
+                          </>
+                        )}
+                      </ul>
                     </CardContent>
                     
                     <CardFooter>
@@ -293,7 +287,6 @@ export default function Pricing() {
           </TabsContent>
         </Tabs>
 
-        {/* FAQ Section */}
         <section className="max-w-4xl mx-auto mt-20">
           <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
           <div className="space-y-6">
@@ -306,7 +299,6 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="mt-20 text-center py-12 px-6 rounded-2xl bg-gradient-to-r from-primary/20 to-blue-500/20">
           <h2 className="text-3xl font-bold mb-4">Ready to start copy trading?</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
