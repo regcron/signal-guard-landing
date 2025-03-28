@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/signal-guard-landing/', // 
+  base: '/', // 
   build: {
     outDir: 'dist', // Default output folder
     assetsDir: 'assets', // Folder for static assets
