@@ -5,9 +5,14 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/signal-guard-landing/', // 
+  build: {
+    outDir: 'dist', // Default output folder
+    assetsDir: 'assets', // Folder for static assets
+  },
   server: {
     host: "::",
-    port: 8080,
+    port: 3000,
   },
   plugins: [
     react(),
