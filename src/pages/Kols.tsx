@@ -161,8 +161,8 @@ export default function Kols() {
                 <DropdownMenuCheckboxItem>Telegram</DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem>Pro Tier</DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem>VIP Tier</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>Win Rate > 70%</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>ROI > 100%</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>Win Rate {'>'} 70%</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>ROI {'>'} 100%</DropdownMenuCheckboxItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <div className="relative">

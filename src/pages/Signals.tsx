@@ -156,7 +156,7 @@ export default function Signals() {
                 <DropdownMenuCheckboxItem>Altcoins</DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem>Buy Signals</DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem>Sell Signals</DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem>Confidence > 80%</DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem>Confidence {'>'} 80%</DropdownMenuCheckboxItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu>
