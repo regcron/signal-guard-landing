@@ -46,11 +46,6 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
                 <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
                   Contact
                 </Link>
@@ -83,7 +78,7 @@ export function SiteFooter() {
       <div className="container mt-8 pt-8 border-t border-border/40">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} SignalGuard. All rights reserved.
+            &copy; {new Date().getFullYear()} SignalGuard.xyz. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground mt-2 md:mt-0">
             Trading involves risk. Invest responsibly.

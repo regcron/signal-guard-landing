@@ -12,6 +12,7 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import { Check, ArrowRight, Shield, TrendingUp, Zap, Layers, BarChart3, Users } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const features = [
   {
@@ -48,7 +49,8 @@ const pricingPlans = [
       "Email notifications"
     ],
     buttonText: "Get Started",
-    buttonVariant: "outline" as const
+    buttonVariant: "outline" as const,
+    comingSoon: false
   },
   {
     name: "Pro",
@@ -62,9 +64,11 @@ const pricingPlans = [
       "Custom risk parameters",
       "Email & SMS alerts"
     ],
-    buttonText: "Upgrade to Pro",
+    buttonText: "Coming Soon",
     buttonVariant: "default" as const,
-    highlight: true
+    highlight: true,
+    comingSoon: true,
+    launchDate: "June 2023"
   },
   {
     name: "VIP",
@@ -79,8 +83,10 @@ const pricingPlans = [
       "24/7 priority support",
       "Exclusive KOL insights"
     ],
-    buttonText: "Go VIP",
-    buttonVariant: "default" as const
+    buttonText: "Join Waitlist",
+    buttonVariant: "default" as const,
+    comingSoon: true,
+    launchDate: "July 2023"
   }
 ];
 
@@ -298,12 +304,22 @@ export default function Index() {
                   className={`flex flex-col ${plan.highlight ? 'border-primary shadow-lg shadow-primary/10' : 'border-border/50'}`}
                 >
                   <CardHeader>
-                    <CardTitle>{plan.name}</CardTitle>
+                    <div className="flex justify-between items-center">
+                      <CardTitle>{plan.name}</CardTitle>
+                      {plan.comingSoon && (
+                        <Badge variant="secondary" className="ml-2">Coming Soon</Badge>
+                      )}
+                    </div>
                     <div className="mt-4 flex items-baseline text-foreground">
                       <span className="text-4xl font-extrabold tracking-tight">{plan.price}</span>
                       {plan.period && <span className="ml-1 font-medium text-muted-foreground">{plan.period}</span>}
                     </div>
                     <CardDescription className="mt-2">{plan.description}</CardDescription>
+                    {plan.launchDate && (
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Expected launch: {plan.launchDate}
+                      </p>
+                    )}
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <ul className="space-y-3">
@@ -316,12 +332,29 @@ export default function Index() {
                     </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full" variant={plan.buttonVariant}>
-                      {plan.buttonText}
-                    </Button>
+                    {plan.comingSoon ? (
+                      <Button className="w-full" variant={plan.buttonVariant}>
+                        {plan.buttonText}
+                      </Button>
+                    ) : (
+                      <Link to="/signup" className="w-full">
+                        <Button className="w-full" variant={plan.buttonVariant}>
+                          {plan.buttonText}
+                        </Button>
+                      </Link>
+                    )}
                   </CardFooter>
                 </Card>
               ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-muted-foreground text-sm">
+                All plans include a 7-day free trial. No credit card required to start.
+              </p>
+              <p className="text-muted-foreground text-sm mt-2">
+                Have questions about which plan is right for you? <Link to="/contact" className="text-primary hover:underline">Contact our team</Link>.
+              </p>
             </div>
           </div>
         </section>
