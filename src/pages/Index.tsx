@@ -11,24 +11,28 @@ import {
   CardHeader, 
   CardTitle 
 } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, Shield, TrendingUp, Zap, Layers, BarChart3, Users } from "lucide-react";
 
 const features = [
   {
     title: "AI Signal Scoring",
-    description: "NLP sentiment analysis with bullish/bearish confidence percentages and historical accuracy tracking."
+    description: "Advanced NLP sentiment analysis with bullish/bearish confidence percentages and historical accuracy tracking.",
+    icon: BarChart3
   },
   {
-    title: "One-Click Copy Trading",
-    description: "Automatically copy trades from top traders with your custom risk management rules."
-  },
-  {
-    title: "Multi-Source Signals",
-    description: "Aggregate and analyze trading signals from Twitter and Telegram."
+    title: "Multi-Source Analysis",
+    description: "Aggregate trading signals from Twitter and Telegram to identify high-confidence opportunities.",
+    icon: Layers
   },
   {
     title: "Performance Tracking",
-    description: "Track win rates, ROI, and other key metrics for traders you follow."
+    description: "Detailed metrics on win rates, ROI, and risk-adjusted returns for all KOLs you follow.",
+    icon: TrendingUp
+  },
+  {
+    title: "One-Click Execution",
+    description: "Instantly execute trades based on signals with your custom risk management parameters.",
+    icon: Zap
   },
 ];
 
@@ -36,10 +40,10 @@ const pricingPlans = [
   {
     name: "Free",
     price: "$0",
-    description: "Basic access to get started with copy trading",
+    description: "Basic access to get started with signal analysis",
     features: [
-      "3 trades per day",
-      "Basic signal alerts",
+      "3 signals per day",
+      "Basic sentiment analysis",
       "Public KOL profiles",
       "Email notifications"
     ],
@@ -50,12 +54,12 @@ const pricingPlans = [
     name: "Pro",
     price: "$39",
     period: "/month",
-    description: "Enhanced trading capabilities for serious traders",
+    description: "Enhanced signal capabilities for serious traders",
     features: [
-      "15 trades per day",
+      "15 signals per day",
       "Priority signal access",
-      "Advanced analytics",
-      "Custom risk rules",
+      "Advanced analytics dashboard",
+      "Custom risk parameters",
       "Email & SMS alerts"
     ],
     buttonText: "Upgrade to Pro",
@@ -68,10 +72,10 @@ const pricingPlans = [
     period: "/month",
     description: "Maximum performance for professional traders",
     features: [
-      "Unlimited trades",
-      "Instant signal notifications",
-      "Premium analytics dashboard",
-      "Advanced risk management",
+      "Unlimited signals",
+      "Instant notifications",
+      "Premium analytics suite",
+      "Advanced risk controls",
       "24/7 priority support",
       "Exclusive KOL insights"
     ],
@@ -86,39 +90,48 @@ export default function Index() {
       <SiteHeader />
       <main>
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28">
-          <div className="absolute inset-0 bg-gradient-to-b from-background to-muted opacity-50 z-0"></div>
+        <section className="relative py-20 md:py-28 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/10 to-background z-0"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="container relative z-10">
             <div className="flex flex-col items-center text-center space-y-6 max-w-3xl mx-auto">
+              <div className="inline-flex items-center px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm mb-4">
+                <Shield className="h-4 w-4 mr-2" />
+                <span>Powered by advanced AI analysis</span>
+              </div>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight gradient-text">
-                AI-Powered Crypto Copy Trading
+                Maximize Crypto Profits with AI-Powered Signals
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl">
-                Follow top traders, copy their winning strategies, and maximize your profits with our AI-driven social trading platform.
+                SignalGuard analyzes thousands of trading signals from top crypto influencers, delivering only the highest confidence opportunities directly to you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Link to="/signup">
-                  <Button size="lg" className="min-w-[160px]">Get Started</Button>
+                  <Button size="lg" className="min-w-[160px] group">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
                 </Link>
-                <Link to="/kols">
+                <Link to="/features">
                   <Button size="lg" variant="outline" className="min-w-[160px]">
-                    Explore Traders
+                    Explore Features
                   </Button>
                 </Link>
               </div>
               
-              <div className="mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground">
+              <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
                 <div className="flex items-center">
                   <div className="h-2 w-2 rounded-full bg-success mr-2"></div>
-                  <span>5,000+ Traders</span>
+                  <span>5,000+ Signal Sources</span>
                 </div>
                 <div className="flex items-center">
                   <div className="h-2 w-2 rounded-full bg-primary mr-2"></div>
-                  <span>$1.2B+ Volume</span>
+                  <span>$1.2B+ Volume Protected</span>
                 </div>
                 <div className="flex items-center">
                   <div className="h-2 w-2 rounded-full bg-warning mr-2"></div>
-                  <span>10,000+ Users</span>
+                  <span>10,000+ Active Traders</span>
                 </div>
               </div>
             </div>
@@ -129,9 +142,9 @@ export default function Index() {
         <section className="py-16 bg-muted/30">
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold">Powered by Advanced Technology</h2>
+              <h2 className="text-3xl font-bold">Advanced Signal Technology</h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Our platform combines AI signal analysis with seamless trading execution to give you the edge in crypto markets.
+                Our platform uses AI to analyze thousands of trading signals, delivering only the highest probability opportunities to your dashboard.
               </p>
             </div>
             
@@ -139,6 +152,7 @@ export default function Index() {
               {features.map((feature, index) => (
                 <Card key={index} className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300">
                   <CardHeader>
+                    <feature.icon className="h-8 w-8 text-primary mb-2" />
                     <CardTitle>{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -156,9 +170,9 @@ export default function Index() {
         <section className="py-16">
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold">How It Works</h2>
+              <h2 className="text-3xl font-bold">How SignalGuard Works</h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Simple, powerful crypto copy trading in just three steps
+                Advanced signal analysis in just three simple steps
               </p>
             </div>
             
@@ -177,9 +191,9 @@ export default function Index() {
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
                   <span className="text-xl font-bold text-primary">2</span>
                 </div>
-                <h3 className="text-xl font-medium mb-2">Follow Top KOLs</h3>
+                <h3 className="text-xl font-medium mb-2">Select Signal Sources</h3>
                 <p className="text-muted-foreground">
-                  Browse our leaderboard of verified traders, analyze their performance, and choose who to follow.
+                  Choose from our curated list of verified KOLs and signal providers with proven track records.
                 </p>
               </div>
               
@@ -187,17 +201,88 @@ export default function Index() {
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
                   <span className="text-xl font-bold text-primary">3</span>
                 </div>
-                <h3 className="text-xl font-medium mb-2">Automate Your Trades</h3>
+                <h3 className="text-xl font-medium mb-2">Receive Vetted Signals</h3>
                 <p className="text-muted-foreground">
-                  Set your risk parameters and let our system automatically execute trades when your chosen KOLs make moves.
+                  Our AI analyzes and scores each signal, delivering only high-confidence opportunities to your dashboard.
                 </p>
               </div>
             </div>
           </div>
         </section>
         
-        {/* Pricing Section */}
+        {/* Testimonials */}
         <section className="py-16 bg-muted/30">
+          <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold">Trusted by Traders Worldwide</h2>
+              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                Hear from our community of successful traders
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="bg-card border-border/50">
+                <CardHeader>
+                  <div className="flex items-center">
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Users className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="ml-4">
+                      <CardTitle className="text-lg">Alex K.</CardTitle>
+                      <p className="text-sm text-muted-foreground">Crypto Day Trader</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    "SignalGuard has completely transformed my trading. The AI filtering saves me hours of research and the signal quality is exceptional."
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card border-border/50">
+                <CardHeader>
+                  <div className="flex items-center">
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Users className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="ml-4">
+                      <CardTitle className="text-lg">Sarah M.</CardTitle>
+                      <p className="text-sm text-muted-foreground">Investment Advisor</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    "The accuracy of SignalGuard's analysis is impressive. My clients' crypto portfolios have seen consistent growth since I started using it."
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card border-border/50">
+                <CardHeader>
+                  <div className="flex items-center">
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Users className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="ml-4">
+                      <CardTitle className="text-lg">Mike T.</CardTitle>
+                      <p className="text-sm text-muted-foreground">Retail Investor</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    "As a part-time trader, SignalGuard gives me an edge I couldn't get otherwise. The VIP tier signals have been game-changing for my portfolio."
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        
+        {/* Pricing Section */}
+        <section className="py-16">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold">Choose Your Plan</h2>
@@ -246,12 +331,16 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-500/20 opacity-30"></div>
           <div className="container relative z-10">
             <div className="flex flex-col items-center text-center space-y-6 max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold">Start Copy Trading Today</h2>
+              <Shield className="h-12 w-12 text-primary mb-2" />
+              <h2 className="text-3xl md:text-4xl font-bold">Start Trading with Confidence</h2>
               <p className="text-xl text-muted-foreground">
-                Join thousands of traders already using our platform to maximize their crypto profits.
+                Join thousands of traders already using SignalGuard to maximize their crypto profits.
               </p>
               <Link to="/signup">
-                <Button size="lg">Create Free Account</Button>
+                <Button size="lg" className="group">
+                  Create Free Account 
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
               </Link>
             </div>
           </div>

@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bell, User, Menu } from "lucide-react";
+import { Bell, User, Menu, Shield } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import {
@@ -21,25 +21,25 @@ export function SiteHeader() {
         <div className="mr-4 flex">
           <Link to="/" className="flex items-center space-x-2">
             <div className="flex items-center">
-              <span className="h-8 w-8 rounded-full bg-gradient-to-r from-primary to-blue-500"></span>
-              <span className="ml-2 text-xl font-bold">CopyTrade</span>
+              <Shield className="h-8 w-8 text-primary" />
+              <span className="ml-2 text-xl font-bold">SignalGuard</span>
             </div>
           </Link>
         </div>
         
         <div className="hidden md:flex md:flex-1 md:items-center md:justify-between">
           <nav className="flex items-center space-x-6">
-            <Link to="/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
-              Dashboard
+            <Link to="/features" className="text-sm font-medium transition-colors hover:text-primary">
+              Features
             </Link>
-            <Link to="/signals" className="text-sm font-medium transition-colors hover:text-primary">
-              Signals
-            </Link>
-            <Link to="/kols" className="text-sm font-medium transition-colors hover:text-primary">
-              KOLs
+            <Link to="/how-it-works" className="text-sm font-medium transition-colors hover:text-primary">
+              How It Works
             </Link>
             <Link to="/pricing" className="text-sm font-medium transition-colors hover:text-primary">
               Pricing
+            </Link>
+            <Link to="/about" className="text-sm font-medium transition-colors hover:text-primary">
+              About
             </Link>
           </nav>
           
@@ -96,25 +96,18 @@ export function SiteHeader() {
       )}>
         <div className="flex flex-col space-y-4">
           <Link 
-            to="/dashboard"
+            to="/features"
             className="text-lg font-medium transition-colors hover:text-primary"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Dashboard
+            Features
           </Link>
           <Link 
-            to="/signals"
+            to="/how-it-works"
             className="text-lg font-medium transition-colors hover:text-primary"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Signals
-          </Link>
-          <Link 
-            to="/kols"
-            className="text-lg font-medium transition-colors hover:text-primary"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            KOLs
+            How It Works
           </Link>
           <Link 
             to="/pricing"
@@ -122,6 +115,13 @@ export function SiteHeader() {
             onClick={() => setMobileMenuOpen(false)}
           >
             Pricing
+          </Link>
+          <Link 
+            to="/about"
+            className="text-lg font-medium transition-colors hover:text-primary"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            About
           </Link>
           {isLoggedIn ? (
             <>

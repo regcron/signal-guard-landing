@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { Shield } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -7,11 +8,11 @@ export function SiteFooter() {
       <div className="container flex flex-col md:flex-row justify-between items-start md:items-center">
         <div className="mb-6 md:mb-0">
           <div className="flex items-center">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-r from-primary to-blue-500"></div>
-            <span className="ml-2 text-xl font-bold">CopyTrade</span>
+            <Shield className="h-8 w-8 text-primary" />
+            <span className="ml-2 text-xl font-bold">SignalGuard</span>
           </div>
           <p className="mt-2 text-sm text-muted-foreground max-w-md">
-            Automated crypto copy trading platform powered by AI. Follow top traders and copy their winning strategies.
+            AI-powered crypto trading signals with unmatched accuracy. Follow top traders and maximize your profits with our advanced signal analysis.
           </p>
         </div>
         
@@ -20,18 +21,18 @@ export function SiteFooter() {
             <h4 className="text-sm font-medium">Platform</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Dashboard
+                <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Features
                 </Link>
               </li>
               <li>
-                <Link to="/signals" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Signals
+                <Link to="/how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+                  How It Works
                 </Link>
               </li>
               <li>
-                <Link to="/kols" className="text-muted-foreground hover:text-foreground transition-colors">
-                  KOLs
+                <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Pricing
                 </Link>
               </li>
             </ul>
@@ -82,7 +83,7 @@ export function SiteFooter() {
       <div className="container mt-8 pt-8 border-t border-border/40">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} CopyTrade Collective. All rights reserved.
+            &copy; {new Date().getFullYear()} SignalGuard. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground mt-2 md:mt-0">
             Trading involves risk. Invest responsibly.
