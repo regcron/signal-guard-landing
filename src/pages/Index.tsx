@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -106,7 +105,7 @@ export default function Index() {
                 <Shield className="h-4 w-4 mr-2" />
                 <span>Powered by advanced AI analysis</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight gradient-text">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight gradient-text">
                 Maximize Crypto Profits with AI-Powered Signals
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl">
@@ -129,15 +128,15 @@ export default function Index() {
               <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
                 <div className="flex items-center">
                   <div className="h-2 w-2 rounded-full bg-success mr-2"></div>
-                  <span>5,000+ Signal Sources</span>
+                  <span>100+ Signal Sources</span>
                 </div>
                 <div className="flex items-center">
                   <div className="h-2 w-2 rounded-full bg-primary mr-2"></div>
-                  <span>$1.2B+ Volume Protected</span>
+                  <span>$2.5B+ Volume Protected</span>
                 </div>
                 <div className="flex items-center">
                   <div className="h-2 w-2 rounded-full bg-warning mr-2"></div>
-                  <span>10,000+ Active Traders</span>
+                  <span>25,000+ Active Traders</span>
                 </div>
               </div>
             </div>
@@ -334,7 +333,7 @@ export default function Index() {
                   <CardFooter>
                     {plan.comingSoon ? (
                       <Button className="w-full" variant={plan.buttonVariant}>
-                        {plan.buttonText}
+                        Subscribe to {plan.name}
                       </Button>
                     ) : (
                       <Link to="/signup" className="w-full">
