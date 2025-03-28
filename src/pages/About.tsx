@@ -11,7 +11,7 @@ const teamMembers = [
     name: "Andy Bard",
     position: "CEO & Founder",
     image: "/placeholder.svg",
-    bio: "Andy has over 15 years of experience in quantitative finance, having previously led algorithmic trading teams at Goldman Sachs and Citadel. He holds a Ph.D. in Financial Engineering from MIT and was an early adopter of cryptocurrency trading in 2013. Andy founded SignalGuard to democratize access to sophisticated trading signals that were previously only available to institutional investors.",
+    bio: "Andy has over 15 years of experience in quantitative finance, having previously led algorithmic trading teams at Goldman Sachs and Citadel. He was an early adopter of cryptocurrency trading in 2013. Andy founded SignalGuard to democratize access to sophisticated trading signals that were previously only available to institutional investors.",
     links: {
       linkedin: "#",
       twitter: "#"
@@ -21,7 +21,7 @@ const teamMembers = [
     name: "Steve Terran",
     position: "CTO",
     image: "/placeholder.svg",
-    bio: "Steve is a technology leader with extensive experience in AI and machine learning. Before joining SignalGuard, he was the lead architect at a major crypto exchange and developed high-frequency trading systems for Wall Street firms. With a background in computer science and mathematics from Stanford, Steve specializes in natural language processing and sentiment analysis algorithms that power SignalGuard's core technology.",
+    bio: "Steve is a technology leader with extensive experience in AI and machine learning. Before joining SignalGuard, he was the lead architect at a major crypto exchange and developed high-frequency trading systems for Wall Street firms. Steve specializes in natural language processing and sentiment analysis algorithms that power SignalGuard's core technology.",
     links: {
       linkedin: "#",
       twitter: "#"
@@ -31,7 +31,7 @@ const teamMembers = [
     name: "Elizabeth Chew",
     position: "Head of Marketing",
     image: "/placeholder.svg",
-    bio: "Elizabeth brings over a decade of experience in fintech marketing and growth strategy. Prior to SignalGuard, she led marketing at several successful fintech startups and managed digital strategy at BlackRock. With an MBA from Wharton and experience as an investment advisor, Elizabeth combines financial expertise with marketing acumen to educate traders about the benefits of AI-powered signal analysis.",
+    bio: "Elizabeth brings over a decade of experience in fintech marketing and growth strategy. Prior to SignalGuard, she led marketing at several successful fintech startups and managed digital strategy at BlackRock. With experience as an investment advisor, Elizabeth combines financial expertise with marketing acumen to educate traders about the benefits of AI-powered signal analysis.",
     links: {
       linkedin: "#",
       twitter: "#"
@@ -41,27 +41,27 @@ const teamMembers = [
     name: "Nicolo Ruben",
     position: "Head of Product",
     image: "/placeholder.svg",
-    bio: "Nicolo has spent his career at the intersection of finance and technology. As a former crypto hedge fund manager and product lead at Binance, he brings deep industry expertise to SignalGuard. With an engineering degree from ETH Zurich and an MBA from INSEAD, Nicolo oversees product strategy and ensures that SignalGuard meets the needs of both novice and experienced traders.",
+    bio: "Nicolo has spent his career at the intersection of finance and technology. As a former crypto hedge fund manager and product lead at Binance, he brings deep industry expertise to SignalGuard. Nicolo oversees product strategy and ensures that SignalGuard meets the needs of both novice and experienced traders.",
     links: {
       linkedin: "#",
       twitter: "#"
     }
   },
   {
-    name: "Sarah Chen",
+    name: "Danny Teo",
     position: "Head of Data Science",
     image: "/placeholder.svg",
-    bio: "Sarah leads SignalGuard's data science team, bringing expertise from her previous roles at Quantitative hedge funds and crypto research firms. With a Ph.D. in Statistics from UC Berkeley, she pioneered several of the machine learning models that power SignalGuard's signal analysis engine. Sarah is passionate about using data to bring transparency to crypto markets.",
+    bio: "Danny leads SignalGuard's data science team, bringing expertise from his previous roles at Quantitative hedge funds and crypto research firms. He pioneered several of the machine learning models that power SignalGuard's signal analysis engine. Danny is passionate about using data to bring transparency to crypto markets.",
     links: {
       linkedin: "#",
       twitter: "#"
     }
   },
   {
-    name: "Michael Kowalski",
+    name: "Yann Quelen",
     position: "Chief Compliance Officer",
     image: "/placeholder.svg",
-    bio: "Michael has extensive experience in financial regulation and compliance, having served as legal counsel at major exchanges and fintech companies. With a J.D. from Harvard Law School and experience at the SEC, Michael ensures that SignalGuard maintains the highest standards of compliance while navigating the evolving regulatory landscape of cryptocurrency markets.",
+    bio: "Yann has extensive experience in financial regulation and compliance, having served as legal counsel at major exchanges and fintech companies. With experience at the SEC, Yann ensures that SignalGuard maintains the highest standards of compliance while navigating the evolving regulatory landscape of cryptocurrency markets.",
     links: {
       linkedin: "#",
       twitter: "#"
